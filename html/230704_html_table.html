@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <table 
+    border="1" 
+    cellspacing="0" 
+    cellpadding="10" 
+    align="center" 
+    width="100%"
+    bgcolor="yellow"
+    bordercolor="red">
+        <!-- table row : 하나의 줄 -->
+        <!-- table > thead > tbody> tr > th(중앙정렬), td -->
+        <thead>
+            <tr>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th>제목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- colspan == 가로 병합 -->
+                <td colspan="2">내용1</td>
+                <!-- <td>내용2</td> -->
+                <td rowspan="3">내용3</td>
+            </tr>
+            <tr>
+                <td rowspan="2">내용1</td>
+                <td>내용2</td>
+                <!-- <td>내용3</td> -->
+            </tr>
+            <tr>
+                <!-- rowspan ==  세로 줄 병합-->
+                <!-- <td>내용1</td> -->
+                <td>내용2</td>
+                <!-- <td>내용3</td> -->
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+    <br />
+    <table border="1" cellpadding="30" cellspacing="0" width="50%" height="25">
+        <tbody>
+            <tr>
+                <th colspan="2">1</th>
+                <!-- <th>2</th>
+                <th>3</th> -->
+                <th rowspan="2">3</th>
+            </tr>
+            <tr>
+                <td rowspan="2">3</td>
+                <td>center</td>
+                <!-- <td>3</td> -->
+            </tr>
+            <tr>
+                <!-- <td>1</td> -->
+                <td colspan="2">2</td>
+                <!-- <td>3</td> -->
+            </tr>
+
+        </tbody>
+    </table>
+
+    <br/>
+
+
+    <table border="1"  cellspacing="0" cellpadding="20" >
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>음료</th>
+                <th>가격</th>
+                <th>이미지</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">커피류</td>
+                <td><a href="https://www.starbucks.co.kr/menu/drink_view.do">아메리카노</a></td>
+                <td>4,200원</td>
+                <td><img src="../img/americano.png" width="50"></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.starbucks.co.kr/menu/drink_view.do">돌체라떼</a></td>
+                <td>4,800원</td>
+                <td><img src="../img/latte.png" width="50"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">주스류</td>
+                <td><a href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168016">자바칩 프라푸치노</a></td>
+                <td rowspan="2">5,000원</td>
+                <td><img src="../img/sdfjlsd.png" width="50"></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002502">녹차 프라푸치노</a></td>
+                <td><img src="../img/dkskldf.png" width="50"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
