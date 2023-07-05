@@ -117,13 +117,42 @@
             background-color: orange;
         }
 
+        /* input 태그이면서 plceholder 조건을 갖지 않는 항목만 */
         input:not([placeholder]) {
             background-color: blue;
+        }
+
+        /* 속성값을 변수화 
+            - 변수 : 특정 값을 저장하는 공간
+            css에서 변수는 '--'로 시작해야 된다.
+        */
+        :root {
+            --main-color : white;
+            --main-bg-color : lightcoral;
+            --sub-color : lightblue;
+            --font-big : 20px;
+            --font-normal : 10px;
+        }
+
+        div {
+            color: var(--main-color);
+            font-weight: 900;
+            font-size: var(--font-big);
+        }
+
+        p {
+            color: var(--sub-color);
+            font-weight: 900;
+            font-size: var(--font-normal);
         }
 
     </style> 
 </head>
 <body>
+
+    <div>안녕</div>
+    <p>안녕</p>
+
     <a href="https://www.naver.com/?mobile" target="_blank" >네이버</a>
     <button type="button">제출</button>
     <br />
