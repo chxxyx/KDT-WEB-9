@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!-- 2. 내장 Style -->
+    <style>
+
+        /* 아무것도 없이 div만 적으면 태그를 의미한다 */
+        div {
+            color: rgb(25, 24, 26);
+            background-color: rgb(187, 187, 177);
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 점을 찍고 적으면 클래스가 된다. -> main이라는 클래스 값이 지정된 곳에 적용된다 */
+        .main {
+            font-size: 30px;
+        }
+
+        .aaa {
+            /* 폰트 굵기 */
+            font-weight: 100;
+        }
+    </style>
+
+    </style>
+     <!-- 3. 링크 방식 (외부참조 방식)
+    모든 스타일을 별도의 폴더 및 하나의 css 파일에 넣고  
+    html 파일에서 해당 css 파일을 링크해서 사용하는 방식
+    -->
+    <!-- <link rel="stylesheet" href="./css/230705_html.css"> -->
+</head>
+<body>
+    <!-- 1. 인라인 방식, 각각 태그 마다 전부 스타일을 적어줘야 한다.
+        아래에서 같은 스타일인 태그들도 각각 다 똑같이 .. 재사용이 전혀 불가능 하다. 
+    -->
+    <!-- <div style="color: red; margin: 20px;">안녕하세요</div> -->
+
+    <!-- 2. 내장 Style -->
+    <div class="aaa">안녕하세요</div>
+    
+    <div>css 수업</div>
+
+    <div class="aaa">aaa 클래스</div>
+
+    <!-- 겹칠 경우 : 인라인 방식이 제일 우선, 내장과 링크 중에서는 나중에 적힌 방식 코드가 적용된다. -->
+
+    
+
+</body>
+</html>
