@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span 태그이면서 오렌지 클래스를 가지고 있는 영역 
+         <span class="orange">오렌지</span>
+        */
+        span.orange {
+            color: aqua;
+        }
+
+        /* <li class="orange apple">사과</li> */
+        li.orange.apple {
+            color: aqua;
+        }
+
+        li#a {
+            color: aqua;
+        }
+
+        /* div의 자식이면서 p태그인 경우 */
+        div > p {
+            color: red;
+        }
+
+        /* div의 자식이면서 orange 클래스인 경우 */
+        div > .orange {
+            color: orange;
+        }
+
+        /* div의 자식이면서 ul의 자식이면서 orange 클래스인 경우 */
+        div > ul > .orange {
+            background-color: rebeccapurple;
+        }
+
+        /* 하위 요소는 띄어쓰기로도 가능하다 */
+        div .apple {
+            font-size: 20px;
+        }
+
+        /* 형제요소 -> 들여쓰기 같은 라인인 경우 */
+        /*  1. 인접 형제 요소 : 바로 다음에 있는 형제 요소
+            <ul>
+                <li class="orange apple">사과</li>
+                <li id="a">딸기</li>
+                <li>오렌지</li>
+            </ul>
+            <div>당근</div>
+        */
+        ul + div {
+            color: brown;
+        }
+
+        /* 아래는 아무것도 선택되지 않는다. ul태그 바로 밑 태그만 해당된다. */
+        ul +  p {
+            color: darkblue;
+        }
+        /*  2. apple이라는 클래스 요소 밑 모든 형제 요소 
+                <li class="apple">사과</li>
+                <li id="a">딸기</li>
+                <li>오렌지</li>
+        */
+        .apple ~ li {
+            background-color: lightcoral;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <ul>
+            <li class="apple">사과</li>
+            <li id="a">딸기</li>
+            <li>오렌지</li>
+        </ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <span class="orange">오렌지</span>
+    </div>
+    
+</body>
+</html>
