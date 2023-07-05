@@ -45,6 +45,32 @@
             color: red;
         }
 
+        /* .fruits *:nth-child(2) {
+            background-color: green;
+        } */
+
+        /* n은 0부터 시작 짝수*/
+        /* .fruits *:nth-child(2n){
+            background-color: green;
+        } */
+
+        /* 홀수 */
+        /* .fruits *:nth-child(2n+1) {
+            background-color: aqua;
+        } */
+
+
+        /* 뒤에서부터 */
+        .fruits *:nth-child(n+2) {
+            background-color: aqua;
+        }
+
+        .fruits *:not(span) {
+            background-color: green;
+            color: white;
+        }
+        
+
     </style>
 </head>
 <body>
@@ -58,7 +84,7 @@
     <br/>
     <div class="fruits">
         <div>바나나</div>
-        <span>딸기</span>
+        <span>딸기</span><br />
         <span>수박</span>
         <div>오렌지</div>
         <p>망고</p>
