@@ -69,9 +69,59 @@
             background-color: green;
             color: white;
         }
-        
 
-    </style>
+        /* 가상요소 선택자 , ">" 아이콘이나 태그 같은 걸 간단하게 박을 수 있음 */
+        .example::after{
+            content: " 🥳";
+        }
+
+        .example::before {
+            content: "🏀 ";
+        }
+
+        .box::after {
+            content: "빨리";
+        }
+
+        .box::before {
+            content: "택시";
+        }
+
+        /* 속성 */
+        /*
+        [속성이름=속성값] {}
+        [속성이름]{}
+        input[속성이름=속성값] {} -> 인풋 요소 중 이것과 같은 속성
+        */
+
+        /* [type=text] {
+            background-color: green;
+        }
+
+        [disabled] {
+            color: white;
+        }
+
+        [value] {
+            color: aqua;
+        }
+
+        *:not([disabled]) {
+            color: blue;
+        } */
+
+        [disabled] {
+            background-color: red;
+        }
+        [placeholder="이름"] {
+            background-color: orange;
+        }
+
+        input:not([placeholder]) {
+            background-color: blue;
+        }
+
+    </style> 
 </head>
 <body>
     <a href="https://www.naver.com/?mobile" target="_blank" >네이버</a>
@@ -90,5 +140,21 @@
         <p>망고</p>
         <h3>사과</h3>
     </div>
+
+    <div class="example">바로 가기</div>
+    <br />
+    <div class="box">여기요!</div>
+
+    <hr />
+    <input type="text" value="HEROPY" />
+    <input type="password" value="1234" />
+    <input type="text" value="ABCD" disabled />
+    <hr />
+    <!-- 실습 -->
+    <input type="text" placeholder="이름" />
+    <input type="password" value="pw" />
+    <input type="text" value="000-0000-0000" />
+    <input type="text" placeholder="핸드폰" />
+    <input type="text" placeholder="주민번호" disabled />
 </body>
 </html>
