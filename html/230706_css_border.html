@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgrey;
+        }
+        .border-1 {
+        
+            border-color: black red blue yellow;
+            border-style: solid dashed;
+            border-width: 10px 5px;
+        }
+        .border-2 {
+            /* width - style - color */
+            border: 5px solid black;
+
+            /* top만 먹힘 
+            border-top: 5px solid black; */
+            
+            border-top-color: black;
+            border-top-style: dashed;
+            border-top-width: 10px;
+        }
+
+        .box1 {
+            border-width: 10px;
+            border-style: dashed;
+            border-color: blue;
+            border-radius: 0px 2px 6px 30px;
+        }
+
+        .box2 {
+            border-width: 5px 5px;
+            border-style: solid dashed dotted ridge;
+            border-color: red black blue yellowgreen;
+            border-radius: 50%;
+            box-sizing: content-box;
+            border-radius: 0px 20px 6px 10px;
+
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            background-color: orange;
+            border: 15px solid red;
+            box-sizing: border-box;
+        }
+
+        .content {
+            box-sizing: content-box;
+            padding: 20px;
+            border: 10px solid black;
+            margin: 20px;
+        }
+
+        .border {
+            box-sizing: border-box;
+            padding: 20px;
+            border: 10px;
+        }
+
+        .content2 {
+            box-sizing: content-box;
+        }
+
+        .border2 {
+            box-sizing: border-box;
+        }
+
+
+        /* 불투명도 */
+        .border2:hover {
+            opacity: 0.7;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box border-1"></div>
+    <br /><br />
+    <div class="box border-2"></div>
+    <br /><br />
+
+    <!-- 실습 -->
+    <div class="box box1"></div>
+    <br /><br />
+    <div class="box box2"></div>
+    <br/>
+
+    <div class="box3 content2"></div>
+    <br /><br />
+    <div class="box3 border2"></div>
+
+    <!-- 요소를 숨기는 3가지 방법 -->
+    <!-- 
+        (투명하게) opacity -> 모습만 숨기는 방법, 속성 남음, 자리차지
+        visiblity : hidden -> 모습과 속성을 숨기는 방법
+        display : none -> 그냥 없애 버리는 빙법, 속성과 자리 모두 없어짐
+
+     -->
+
+     <div class=""></div>
+
+</body>
+</html>
