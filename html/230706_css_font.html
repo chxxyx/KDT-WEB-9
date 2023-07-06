@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+     -->
+    <style>
+        /* 구글 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR&display=swap');
+
+        /* 눈누 */
+        @font-face {
+            font-family: 'TAEBAEKmilkyway';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Dovemayo_gothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            /* font-size는 자식요소, 하위요소도 다 적용 */
+            font-size: 16px;
+        }
+        main {
+            font-size: 20px;
+               /* 정렬 */
+               text-align: center;
+               /* 밑줄, 중간 줄 등등 */
+               /* text-decoration: underline; */
+               /* text-decoration: line-through; */
+        }
+
+        /* 단위 */
+        .font-px {
+            font-size: 20px;
+            /* font-family: 'Noto Sans KR', sans-serif; */
+        }
+
+        /* 상위 요소의 배수 */
+        /*  em은 가장 가까운 부모 요소의 폰트 사이즈 기준
+            rem은 가장 상위 요소의 폰트 사이즈 기준  */
+
+        .font-em {
+            font-size: 1.5em;
+            /* 글꼴 지정 */
+            /* font-family: serif; */
+            font-weight: 900;
+        }
+
+        .font-rem {
+            /* rem: 1.5배 -> line-height : 2배 */
+            font-size: 1.5rem;
+            line-height: 2;
+            font-family: 'TAEBAEKmilkyway', sans-serif;
+        }
+
+        /* %의 기준은 부모 */
+        .font-per {
+            font-size: 100%;
+            color: rgb(244, 186, 186);
+        }
+
+        .font-goo {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        .font-nn {
+            font-family: 'Dovemayo_gothic';
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .orange {
+            width: auto;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .html {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            margin-right: 30px;
+            display: inline-block;
+        }
+
+        .css {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            margin-right: 30px;
+            display: inline-block;
+        }
+
+        .js {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            margin-right: 30px;
+            display: inline-block;
+        }
+
+        /* 기본 속성값  */
+        /* span {
+            display: inline;
+        }
+
+        div {
+            display: block;
+        } */
+
+        /* 실습 답안  -> 더 줄여서 작성할 수 있는 듯*/ 
+        .parents {
+            width: auto;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .parents div {
+            width: 200px;
+            height: 100px;
+            margin-right: 30px;
+            display: inline-block;
+        }
+
+        .skyblue {
+            background-color: skyblue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="font-px">안녕하세요</div>
+        <div class="font-em">안녕하세요</div>
+        <!-- 가장 상위에 있는 요소(:root)가 안 바뀌었기 때문에 X   -->
+        <div class="font-rem">안녕하세요</div>
+        <div class="font-per">안녕하세요</div>
+        <br />
+        <hr />
+        <div clss="font-goo">Whereas disregard and contempt for human rights have resulted</div>
+        <div class="font-nn">얌전한 고딕버전의 둘기마요</div>
+    </main>
+    <a href="#">에이태그</a>
+
+    <!-- 인라인 요소 안에 블록 요소가 오는 건 권장하지 않는다. (span 안에 div와 같이) -->
+    <span></span>
+
+    <!-- 블록 요소는 width 조절이 가능하다, 한 줄을 차지하기 때문에-->
+    <div style="background-color: red;">aaa</div>
+
+    <div style="display: inline-block; background-color: aqua;">ccc</div>
+
+    <!-- 인라인 요소는 width를 조절해도 크기 변화가 없다 -->
+    <span style="background-color: blue;">dd</span> 
+
+    <hr />
+
+    <div class="orange">
+        <div class="html">HTML</div>
+        <div class="css">CSS</div>
+        <div class="js">javascript</div>
+    </div>
+
+    <hr />
+
+    <div class="parents">
+        <div class="skyblue">HTML</div>
+        <div class="green">CSS</div>
+        <div class="red">javascript</div>
+    </div>
+</body>
+</html>
