@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        img {
+            width: 100px;
+            height: 100px;
+            /* translateX(40px) : x축으로 40px 이동
+               translateY(40px) : y축으로 40px 이동  */
+        }
+
+        /* img#translate:active {
+            transform: translate(40px, 40px);
+        } */
+
+        /* scaleX : 가로로 길어지게, scaleY 세로로 길ㄹ어지는  :active는 버튼 클릭 시 */
+        /* img#scaleX:active {
+            transform: scaleX(2);
+        } */
+
+        /* 회전시키는 동작, deg라는 각도 단위를 적어줘야 한다. */
+        img#rotate:active {
+            transform: rotateX(180deg);
+            backface-visibility: hidden; /* 그림을 사라지게 함 */
+        } 
+
+        /* 기울이기 */
+        img#skew:active {
+            transform: skewY(-45deg);
+        }
+
+
+        .container {
+            width: 600px;
+            height: 500px;
+        }
+
+
+        img#spotify {
+            width: 200px
+        }
+
+        img#spotify-1 {
+            position: absolute;
+            top: 100px;
+            display: flex;
+            transform: skewY(20deg);
+            z-index: 3;
+        }
+
+        img#spotify-2 {
+            position: absolute;
+            display: flex;
+            left: 90px;
+            top: 100px;
+            z-index: 2;
+            transform: skewY(20deg);
+        }
+
+        img#spotify-3 {
+            position: absolute;
+            display: flex;
+            top: 100px;
+            left: 180px;
+            transform: skewY(20deg);
+            z-index: 1;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div>
+        <!-- <img
+            id="translate"
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832"
+        />
+
+        <img
+        id="scaleX"
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832"
+        /> -->
+
+        <!-- <img
+        id="rotate"
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832"
+        />
+
+        <img
+        id="skew"
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832"
+        /> -->
+
+    
+
+    <div class="container">
+        <img id="spotify-1" src="../img/mck_605c5062d1716-562x313.jpeg">
+        <img id="spotify-2" src="../img/mck_605c5062d1716-562x313.jpeg">
+        <img id="spotify-3" src="../img/mck_605c5062d1716-562x313.jpeg">
+    </div>
+</body>
+</html>
