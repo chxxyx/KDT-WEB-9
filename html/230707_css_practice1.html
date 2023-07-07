@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* background-color: black; */
+        }
+
+        .one {
+            background-color: skyblue;
+            
+        }
+
+        .one-1 {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .one-2 {
+            position: absolute;
+            left: 0px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .two {
+            position: relative;
+            background-color: rgb(35, 113, 190);
+            left: -15px;
+            bottom: -15px;
+            z-index: 1;
+        }
+
+        .three {
+            position: relative;
+            background-color: darkblue;
+            left: -50px;
+            bottom: -30px;
+            z-index: 2;
+
+        }
+
+        .four {
+            position: relative;
+            background-color: blue;
+            right: 80px;
+            top: 28px;
+            z-index: 3;
+        }
+
+        .five {
+            position: relative;
+            background-color: rgb(132, 204, 237);
+            right: 105px;
+            top: 28px;
+            z-index: 5;
+
+        }
+        img {
+            position: absolute;
+            z-index: 4;
+            width: 200px;
+            top: 40px;
+            left: 20px;
+        }
+
+        /*  ->  
+             첨엔 img 태그의 포지션을 relative로 설정했었다.
+            자기 자신이 기준이었기 때문에 자리를 차지하게 됐고
+            그 과정에서 첨부 이미지가 위로 올라갈 때 애벌레가 해체 됐었다 ... 
+            img 태그는 absolute 포지션을 걸어주면 될 거 라고
+            리더님이 말씀해주셔서 잘 수정했다 ㅠ
+        */
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle one" style="display: inline-block;">
+            <div class="one-1">
+                <div class="one-2"></div>
+            </div>
+        </div>
+
+        <div class="circle two" style="display: inline-block;"></div>
+        <div class="circle three" style="display: inline-block;"></div>
+        <div class="circle four" style="display: inline-block;"></div>
+        <div class="circle five" style="display: inline-block;"></div>
+        <img src="../img/pngwing.com.png">
+    </div>
+</body>
+</html>
