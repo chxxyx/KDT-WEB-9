@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .child {
+           padding: 10px;
+           font-weight: 800;
+        }
+
+        .header-1 {
+            display: flex;
+            background-color: lightgray;
+        }
+
+        .menu-1 {
+            position: absolute;
+            right: 180px;
+        }
+
+        .menu-2 {
+            position: absolute;
+            right: 90px;
+        }
+        .menu-3 {
+            position: absolute;
+            right: 10px;
+        }
+
+        .header-2 {
+            display: flex;
+            background-color: lightgray;
+            justify-content: space-between;
+        }
+        .header-3 {
+            display: flex;
+            background-color: lightgray;
+            justify-content: space-between;
+        }
+
+        .header-4 {
+            display: flex;
+            background-color: lightgray;
+            justify-content: space-between;
+        }
+
+        .box {
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header-1">
+        <div class="child">LOGO</div>
+        <div class="child menu-1">MENU1</div>
+        <div class="child menu-2">MENU2</div>
+        <div class="child menu-3">MENU3</div>
+    </div>
+    <br />
+    <br />
+    <div class="header-2">
+        <div class="child">MENU1</div>
+        <div class="child">MENU2</div>
+        <div class="child">MENU3</div>
+    </div>
+    <br />
+    <br />
+    <div class="header-3">
+        <div class="child">LOGO</div>
+        <div class="box">
+            <div class="child">MENU1</div>
+            <div class="child">MENU2</div>
+            <div class="child">MENU3</div>
+        </div>
+        <div class="child">LOGIN</div>
+    </div>
+    <br />
+    <br />
+
+    <div class="header-4">
+        <div class="box">
+            <div class="child">LOGO</div>
+            <div class="child">MENU1</div>
+            <div class="child">MENU2</div>
+            <div class="child">MENU3</div>
+        </div>
+        <div class="box">
+            <div class="child">LOGIN</div>
+            <div class="child">SIGNUP</div>
+        </div>
+    </div>
+
+</body>
+</html>
