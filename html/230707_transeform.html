@@ -12,6 +12,10 @@
             height: 100px;
             /* translateX(40px) : x축으로 40px 이동
                translateY(40px) : y축으로 40px 이동  */
+
+            /* transition-property: transform;    */
+               /* 완성되기까지 몇 초까지 ? */
+            transition-duration: 2s;
         }
 
         /* img#translate:active {
@@ -69,14 +73,43 @@
             left: 180px;
             transform: skewY(20deg);
             z-index: 1;
+        }
 
+        .box {
+            margin-left: 0;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            transition: all 2s;
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+        }
+
+        /* 실습 */
+        .tran { 
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            transition: 0.5s, 1.5s;
+            overflow: scroll;
         }
         
+        .tran:hover {
+            width: 300px;
+            height: 300px;
+        }
 
     </style>
 </head>
 <body>
     <div>
+
+        <!-- <div class="box"></div> -->
         <!-- <img
             id="translate"
             src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832"
@@ -98,11 +131,13 @@
         /> -->
 
     
-
+<!-- 
     <div class="container">
         <img id="spotify-1" src="../img/mck_605c5062d1716-562x313.jpeg">
         <img id="spotify-2" src="../img/mck_605c5062d1716-562x313.jpeg">
         <img id="spotify-3" src="../img/mck_605c5062d1716-562x313.jpeg">
-    </div>
+    </div> -->
+
+    <div class="tran">안녕하세요! 코딩은 실습을 시작합니다.dkjsldkfsldmclskdmflksdflksdflksdmclksdmlfksdmflksdmlfksdmcklsdkcmsdlkfmls</div>
 </body>
 </html>
