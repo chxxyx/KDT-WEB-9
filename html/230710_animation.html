@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+        .div {
+            position: absolute; /* 뷰포트 기준, html 자식 */
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+
+            /* 애니메이션 정의 후 지정할 때 이름-지속시간-횟수- */
+            animation: movetoright 2s linear infinite alternate;
+            
+        }
+        .practice {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightpink;
+            animation: movetoright 3s linear infinite;
+        }
+
+        /* 애니메이션 정의 == @keyframes(식별자) */
+        @keyframes movetoright {
+            /* from {
+                left: 0px;
+            }
+            to {
+                left: 100px;
+                
+            } 
+            from {
+                
+            } */
+            
+            0% {
+                left: 0px;
+            }
+
+            25% {
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        @keyframes practice {
+            /* 0% {
+                margin-left: 100%;
+                width: 300%;
+            }
+            100% {
+                margin-left: 0%;
+                width: 100%;
+            } */
+
+            0% {
+                right: -100%;
+                width: 300%;
+            }
+
+            100% {
+                right: 0;
+                width: 100%;
+            }
+    
+        }
+
+        p {
+            position: relative;
+            animation: practice 5s linear infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div></div><br /><br /> -->
+    <!-- <div class="practice"></div> -->
+    <p> "As I relax on the sofa and gaze around a room a thought hits me: this is exactly the place I've been looking for all my life. A little hideaway in some sinkhole somewhere. I'd always thought of it as a secret, imaginary place, and can barely believe that it actually exists. I close my eyes and take a breath, and wonder of it all settles over me like a gentle cloud." </p>
+</body>
+</html>
