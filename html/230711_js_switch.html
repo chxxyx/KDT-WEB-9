@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let name = "성춘향";
+
+        // switch
+        switch(name) {
+            case "성춘향": // name == "성춘향" 인지 검사2
+                console.log("여자");
+                break; // 이 케이스의 코드만 실행할 거면 꼭 break를 걸어야 한다. 안 걸면 다음 코드로 쭉 넘어감
+            case "홍길동": // name == "홍길동" 인지 검사2
+                console.log("남자");
+                break;
+            default: // 
+                console.log("잘 모르겠습니다.");
+                break;
+        }
+
+        // 삼항 연산자 : 조건 ? 참일 경우의 코드 : 거짓일 경우의 코드
+        let age = 18;
+        // age >= 20 ? console.log("성인") : console.log("고등학생");
+
+        let state = age >= 20 ? '성인' : '미성년자';
+        console.log(state);
+
+        console.log(age >= 20 ? '성인' : '미성년자');
+
+        // === : 타입까지 비교하는 것
+
+        let now = new Date().getHours();
+        console.log(12 <= now <= 23 ? '오후' : '오전');
+
+    </script>
+</body>
+</html>
