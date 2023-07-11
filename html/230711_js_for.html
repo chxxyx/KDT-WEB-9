@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 반복문 
+
+        for(let i=0; i<5; i++) {
+            // for(let j=0; j<10; j++) {
+            // }
+            console.log("안녕");
+        }
+        for(let i=2; i<5; i=i+2) { //2일 때 한 번, 4일 때 한 번
+            // for(let j=0; j<10; j++) {
+            // }
+            console.log("안녕");
+        }
+        for(let i=0; i < 10; i++) {
+            console.log("ㅏ어ㅣㅏ");
+        }
+
+        let fruits = ["apple", "grape", "orange", "banana"];
+
+        for (let i=0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+        
+        let number = 5;
+        let sum = 0;
+        for(let i=1; i<=5; i++) {
+            sum += i;
+        }
+
+        console.log(sum);
+
+        /**
+        for(let i=1; i<=5; i--) { // 계속 무한 반복
+            console.log(i)
+        } 
+        */
+
+        for(let i = 5; i > 0; i--) {
+            console.log(i);
+        }
+
+        for(let i=1; i<=5; i++) {
+            for(let j=0; j<=5; j++) { // 안에 있는 반복문 모두 실행 후 밖에 있는 반복문 실행
+                console.log(i, j);
+            }
+        }
+
+        // 실습1. : 13의 배수이면서, 홀수인 수 찾기 prompt로 입력받은 숫자 만큼 -> 특정 조건만  출력하게끔 
+        //let num = Number(prompt("숫자를 입력해주세요."));
+        let num = 100;
+ 
+        for(let i=0; i<num; i++) {
+
+            if(i % 13 === 0 && i % 2 !=0) {
+                console.log(i)
+            }    
+        }
+
+        // 실습2. : 구구단 만들기 
+        for(let i = 1; i <= 9; i++) {
+            //console.log(i + '단')
+            console.log(`---${i}단---`);
+            for(let j = 1; j<=9; j++) {
+               // console.log(i + ' * ' + j + ' = ' + (i*j)); 
+               console.log(`${i} x ${j} = ${i*j}`);
+            }
+        } 
+
+    </script>
+</body>
+</html>
