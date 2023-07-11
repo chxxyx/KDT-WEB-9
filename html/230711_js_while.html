@@ -13,6 +13,7 @@
         let index = 0; 
         let fruits = ["apple", "grape", "orange", "banana"];
 
+
         
         // for (let i=0; i < fruits.length; i++) {
            
@@ -23,17 +24,25 @@
         //     console.log(fruits[i]);
         // }
 
-        // let index2 = -1;
-        // while(index2 < fruits.length-1){
-        //     index2++;
-        //     if(fruits[index2] == "banana") {
-        //         continue
-        //     }
-        //     console.log(fruits[index2]);
+        // for (변수 선언 of 배열) {
+
         // }
+
+        for(let f of fruits) {
+            console.log(f); // f는 결국 배열 원소 하나, 하나를 의미한다.
+        }
+
+        let index2 = -1;
+        while(index2 < fruits.length-1){
+            index2++;
+            if(fruits[index2] == "banana") {
+                continue
+            }
+            console.log(fruits[index2]);
+        }
          
 
-        let n = Number(prompt("1 ~ 99까지 사이의 숫자를 입력해주세요."));
+      //  let n = Number(prompt("1 ~ 99까지 사이의 숫자를 입력해주세요."));
         let sum = 0;
 
         while(n < 100) {
@@ -55,19 +64,19 @@
         //isNaN()
 
         //console.log(isNaN(num)); // prompt 타입 확인, 숫자가 아니면 true, false이면 while문을 빠져나간다.
-        // while(isNaN(num)) {  // while문은 반복횟수를 지정할 수 없을 때 사용한다. 
-        //     num = Number(prompt("숫자를 입력하세요."))
-        //     console.log(num)
-        // }
-        // let number = 5;
-        // while(true) {
-        //     number = Number(prompt('10이상의 숫자를 입력해주세요.'));
-        //     if(number >= 10) {
-        //         break; // 10이상의 숫자를 받았을 경우 while문 종료 !
-        //     }
-        // }
+        while(isNaN(num)) {  // while문은 반복횟수를 지정할 수 없을 때 사용한다. 
+            //num = Number(prompt("숫자를 입력하세요."))
+            console.log(num)
+        }
+        let number = 5;
+        while(true) {
+            number = Number(prompt('10이상의 숫자를 입력해주세요.'));
+            if(number >= 10) {
+                break; // 10이상의 숫자를 받았을 경우 while문 종료 !
+            }
+        }
 
-        //구구단 while 버전
+       // 구구단 while 버전
 
         // let i = 2, j = 1;
         // while(i < 10) {
@@ -79,16 +88,27 @@
         //     j=1; // j가 1로 초기화되지 않으면 3단부터는 불가능
         // }
 
-        // let k = 2;
-        // while(k<10) {
-        //     let h = 1;
-        //     while(h<10) {
-        //         console.log(`${k} x ${h} = ${k*h}`) 
-        //         h++;
-        //     }
-        //     k++;
-        // }
+        let k = 2;
+        while(k<10) {
+            let h = 1;
+            while(h<10) {
+                console.log(`${k} x ${h} = ${k*h}`) 
+                h++;
+            }
+            k++;
+        }
+
+        // dowhile 문은 우선 먼저 실행을 하고, 조건을 검사한다.
+        let j = 0; // i가 만약 10이라면 ? 아래의 do while문은 당연히 실행되지 않는다 .
+        
+        do {
+            // 반복할 코드 
+            console.log(j)
+            j++;
+
+        } while (j < 10); 
        
+
         
     </script>
 </body>
