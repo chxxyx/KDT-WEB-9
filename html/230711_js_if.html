@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script></script>
+</head>
+<body>
+    <script>
+        // 조건문 : 조건에 따라 다른 코드를 실행시키는 문법
+        // if(조건) {
+
+        // }
+        let isShow = false;
+
+        // if(isShow) { // 참인 조건이 옴
+        //     console.log("보여줌");
+        // } else { // 거짓인 조건
+        //     console.log("안 보여줌");
+        // }
+        let number = 5;
+
+        if(number < 5) { //false
+            console.log("5보다 크다"); // <= 5가 조건이 되어야 true가 된다.
+        } else if(number < 8) { // true, 여기서 true니까 조건문은 여기까지만 실행된다.
+            console.log("8보다 작다");
+        } else {
+            console.log("10보다 크지도, 8보다 작지도 않다.");
+        }
+/*
+        if(조건1) {} // 조건 1을 만족하는 경우
+        else if(조건2) {} // 조건1이 아니면서 조건2를 만족하는 경우
+        else if(조건3) {} // 조건2가 아니면서 조건3을 만족하는 경우
+        else {} // 조건1, 2, 3, 4 모두 만족하지 않는 경우
+*/
+        // let num1 = 3;
+        // let num2 = 5;
+
+        // if (num1 >= num2 ) {
+        //     console.log("num1이 num2보다 크거나 같을 때");
+        // } else if (num1 == num2) {
+        //     console.log("num1과 num2가 같을 때");
+        // } else if (num1 <= num2) {
+        //     console.log("num1보다 num2가 크거나 같을 때");
+        // } else {
+        //     console.log("아무것도 해당되지 않는다.");
+        // }
+
+        // let num3 = 10;
+
+        // if(num1 / num2 > num3) {
+
+        // } else if(num1 + num2 <= num3) {
+
+        // } else if(num1 * num2 == num3) {
+
+        // }
+
+        // if(num1 <= num2) {
+          
+        // } else {
+
+        // }
+
+          // prompt는 문자열로 인식하는 거 까먹지 말자 
+        let age = Number(prompt("나이를 입력해주세요"));
+        let gender = prompt("성별을 입력해주세요");
+       
+       
+        if(age >= 20) {
+            // if(gender == "여자") {
+            //     console.log("성인 여자");
+            // } else if (gender == "남자"){
+            //     console.log("성인 남자");
+            // }
+            alert(`성인 ${gender}`);
+
+        } else if(age >= 17) {
+
+            alert(`고등 ${gender}`);
+
+        } else if(age >= 14) {
+
+            alert(`중등 ${gender}`);
+
+        } else if (age >= 8) {
+            alert(`초등 ${gender}`);
+
+        } else if(age >= 0){
+            alert(`유아 ${gender}`);
+
+        } else {
+            alert("오류 발생, 0 ~ 이상의 숫자를 입력해주세요.");
+        }
+
+
+    /*
+        if(age >= 20 && gender == "여자") {
+            alert(`성인 ${gender}`);
+        } else if(age >= 20 && gender == "남자") {
+            console.log("성인 남자");
+        } else if(age >= 17 && gender == "여자") {
+            console.log("고등학생 여자");
+        } else if(age >= 17 && gender == "남자") {
+            console.log("고등학생 여자");
+        } .... 
+
+    */
+
+    </script>
+</body>
+</html>
