@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let now = new Date() // 오늘 기준, 2023-07-12 기준
+        console.log(now)
+        console.log(now.getFullYear()) // 올해 년도
+        console.log(now.getMonth()) // 현재 달에서 -1한 달이 나오므로 현재 달 출력은 +1
+        console.log(now.getDate()) // 오늘 
+        console.log(now.getDay()) // 3 = 수요일, 요일을 숫자로 변환한다.
+        console.log(now.getTime()) // 1970년대 1월 1일 0시 0초 기준으로 현재까지의 시간을 초로 나타낸다. 
+
+        // 만료일 : '2023-06-07'
+        let expired = new Date('2023-06-07')
+        console.log(now.getTime() >= expired.getTime())  // now가 더 크면 만료일이 지난 것, true가 나온다.
+        console.log(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`)
+
+        // '2023-06-07' -> '0'이 붙은 채로 표현하고 싶을 때
+        let year = now.getFullYear();
+        let month = now.getMonth()+1;
+        let date = now.getDate();
+
+        console.log(`${year}-${month >= 10 ? month : "0"+month}-${date >= 10 ? date : "0"+date}}`)
+
+        //Math 함수, 웹 브라우저 마다 다른 결과를 출력할 수도 있다. Min, Max 정도 사용
+        console.log(Math.PI)
+        console.log(Math.E)
+
+        console.log(Math.min(2, 5, 8)) // ()안 중에서의 최솟값
+        console.log(Math.max(2, 5, 8)) // ()안 중에서의 최댓값
+        console.log(Math.random()) 
+        console.log(Math.round(7.9), Math.round(7.2)) // 반올림 해서 가장 가까운 정수
+        console.log(Math.floor(7.9), Math.floor(7.2)) // 소수점을 내림
+        console.log(Math.ceil(7.9), Math.ceil(7.2)) // 소수점을 올린다 
+
+        console.log(Math.floor(Math.random() * (100 - 1) + 1)) // 1~100 사이의 랜덤한 숫자, 반올림하지 않으면 소수점이 붙은 숫자들이 나온다
+    </script>
+</body>
+</html>
