@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://127.0.0.1:5500/html/230712_js_dom.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="red" class="box red" name="box">
+            <span>빨간</span>
+            <span>상자</span>
+        </div>
+        <div id="orange" class="box orange"></div>
+        <div id="yellow" class="box yellow"></div>
+    </div>
+    <!-- <input type="text" name="id" /> -->
+
+  <!-- <button type="button" onclick="redToggle()">깜빡깜빡</button> -->
+
+    <button type="button" onclick="createGreenBox()"></button>
+
+    <script>
+        /** DOM (Document Object Model)
+         *  웹 페이지에 존재하는 HTML 요소에 접근하여 행동을 하고자 할 때 사용하는 객체 
+         * */
+
+        // 1. 요소 선택자
+
+        // ID
+        // let redBoxID = document.getElementById("red") // "red"라는 id 요소를 가져오겠다.
+        // console.log(redBoxID)
+
+        // // 클래스
+        // let boxes = document.getElementsByClassName("box") // 배열
+        // console.log(boxes)
+
+        // // 태그
+        // let boxesByTag = document.getElementsByTagName("div") // 배열
+        // console.log(boxesByTag)
+
+        // let input = document.getElementsByName("id") // 요소 
+        // console.log(input)
+
+        // let boxedsBySelector = document.querySelector(".box") // 해당 요소 중 문서 제일 첫번 째
+        // console.log(boxedsBySelector) 
+        
+        // let boxedsBySelectorAll = document.querySelectorAll(".box") // 전체 선택이므로, 배열
+        // console.log(boxedsBySelectorAll)
+
+        // let orangeBoxID = document.querySelectorAll("#orange")
+        // console.log(orangeBoxID)
+
+        // 2. 요소 다루기
+
+        // document.write()
+        // let redBox = document.getElementById("red")
+        // redBox.innerText = "RED" // 안에 내용이 "RED" 로 바뀐다.
+        // redBox.innerHTML = "<span>RED box</span>" // 태그를 인식한다.
+        // console.log(redBox.innerText) // 글자만 콘솔에 출력
+        // console.log(redBox.innerHTML) // 태그 통으로 콘솔에 출력 
+        // console.log(redBox.textContent)
+    
+        // console.log(redBox.className) // 클래스에 적어둔 문자열 그대로 나옴 
+        // redBox.className = "box yellow" // 이건 box와 yellow의 속성으로 바꾼다는 뜻 
+
+       // console.log(redBox.classList) //배열 
+
+        // onclick
+        /**
+         *   function redToggle() {
+                let redBox = document.getElementById("red")
+                
+                if(redBox.classList.contains("red")){
+                    redBox.classList.remove("red") // red 속성을 지움
+                } else {
+                    redBox.classList.add("red")
+                }
+
+                // classList 속성은 contains 함수를 제공한다.
+                // 괄호 안에 들어온 값이 클래스에 존재하는지 검사해서 Boolean 값을 리턴한다.
+                
+            }
+
+            -> 이런 동적 기능을 toggle() 이라는 메서드로 제공한다.
+        */
+
+        // function redToggle() {
+        //     let redBox = document.getElementById("red")
+        //     redBox.classList.toggle("red")
+        // }
+        // function orangeToggle() {
+        //     let yellowBox = document.getElementById("orange")
+        //     //yellowBox.classList.toggle("orange")
+        //     if(yellowBox.classList.contains("orange")){
+        //             yellowBox.classList.remove("orange") // red 속성을 지움
+        //         } else {
+        //             yellowBox.classList.add("orange")
+        //         }
+        // }
+
+        // function yellowToggle() {
+        //     let yellowBox = document.getElementById("yellow")
+        //     //yellowBox.classList.toggle("yellow")
+        //     if(yellowBox.classList.contains("yellow")){
+        //             yellowBox.classList.remove("yellow") // red 속성을 지움
+        //         } else {
+        //             yellowBox.classList.add("yellow")
+        //         }
+        // }
+        
+
+        let redBox = document.getElementById("red")
+       
+
+        redBox.setAttribute("name", "box") // 속성 변경 -> box라는 이름의 name 요소 추가
+
+        // console.log(redBox.setAttribute("class", "box orange")) // jquery
+
+        // 다른 노드에 접근하기 (자식 요소 또는 부모 요소)
+        // 부모 요소 선택하기
+        let container = document.querySelector(".container")
+        console.log(container)
+
+        // 자식 요소 선택하기
+        console.log(container.children) // 배열로 출력된다, 부모의 자식요소'들' 
+        console.log(container.children[0]) // 0번째 요소
+        console.log(container.children[container.children.length-1]) // 마지막 요소
+            
+        // 부모 요소 선택하기
+        console.log(redBox.parentNode) // 상위 요소 하나만 선택돼서 출력한다. 
+
+        // 형제 요소 선택하기
+        let orangeBox = document.getElementById("orange")
+     //   console.log(orangeBox.nextElementSibling) // red div 다음 요소 하나 !
+        // console.log(redBox.nextElementSibling)
+
+        // 요소 만들기
+
+        function createGreenBox() {
+            let createBox = document.createElement('div') 
+            createBox.className = "box green"
+
+            document.write(createBox)
+        }
+  </script>
+    
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
