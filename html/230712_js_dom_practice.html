@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    값1 : <input type="text" id="value1"/><br/>
+    값2 : <input type="text" id="value2"/><br/>
+    연산자 : <input type="text" id="operator"/><br/>
+    결과 : <input type="text" id="result"/><br/>
+    <button type="button" onclick="startCir()">계산하기</button>
+    <button type="button" onclick="remove()">초기화</button>
+
+    <hr />
+    <br />
+
+    <div>방명록입니다.</div>
+
+    작성자<input type="text" id="user"/> <br />
+    내용 <input type="text" id="contents"> <br />
+    <br />
+    <button type="button" onclick="writeContents()">작성</button>
+    <table border="1"  cellspacing="0" cellpadding="20">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+         // 실습 1. 간단 계산기 만들기
+
+         function startCir() {
+            let firstNum = document.getElementById("value1").value;
+            let secondNum = document.getElementById("value2").value;
+            let operator = document.getElementById("operator").value;
+            let result = 0
+
+            switch(operator) {
+                case "+" : 
+                result = Number(firstNum) + Number(secondNum)
+                console.log(result)
+                break;
+
+                case "-" : 
+                result = Number(firstNum) - Number(secondNum)
+                console.log(result)
+                break;
+
+                case "*" : 
+                result = Number(firstNum) * Number(secondNum)
+                console.log(result)
+                break;
+
+                case "/" :    
+                result = Number(firstNum) / Number(secondNum)
+                console.log(result)
+                break;
+            }
+
+            document.getElementById("result").value = result;
+            
+        }
+
+        function remove() {
+            let firstNum = document.getElementById("value1").value;
+            let secondNum = document.getElementById("value2").value;
+            let operator = document.getElementById("operator").value;
+            let result = document.getElementById("result").value;
+
+            document.getElementById("value1").value = "";
+            document.getElementById("value2").value = "";
+            document.getElementById("operator").value = "";
+            document.getElementById("result").value = "";
+        }
+
+       
+        // 실습 2. 방명록 만들기
+        function writeContents() {
+            
+            let table = document.querySelector("table"); // 1. 테이블 태그 불러오기 
+            let num = 1; // id 
+
+            // 1-1. 행 생성
+            /*
+            * 
+                <tr>
+                    <td>게시글 No.</td>
+                    <td>작성자</td>
+                    <td>내용</td>
+                    <td>작성일</td>
+                </tr>
+                 -> 각각의 요소 만들어주기 !!! 
+            */
+            let tr = document.createElement("tr")
+            console.log(tr)
+
+            // 게시글 no
+            let no = document.createElement("td")
+            no.innerText = num;
+
+            // 작성자
+            let userName = document.createElement("td");
+            let user = document.getElementById("user").value;
+            userName.innerText = user;
+
+            // 내용
+            let cont = document.createElement("td");
+            let contents = document.getElementById("contents").value;
+            cont.innerText = contents;
+
+            // 날짜
+            let date = document.createElement("td");
+            let now = new Date()
+            // 2022-7-2- 15:4 -> 날짜 형식 수정하기.
+            let inputDate = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} ${now.getHours()} : ${now.getMinutes()}`
+            date.innerText = inputDate;
+
+            // 요소만 만드는 게 아니라 자식요소로 추가시켜줘야 한당
+
+            tr.appendChild(no)
+            tr.appendChild(userName)
+            tr.appendChild(cont)
+            tr.appendChild(date)
+
+            table.appendChild(tr)
+            num++;
+            
+        }
+    </script>
+</body>
+</html>
