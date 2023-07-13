@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box red" onclick="switchColor()"></div>
+
+    <script>
+        // $(".box").switchClass("red", "orange") // 기존 클래스, 두번 째 "" 클래스로 변경, transition
+        function switchColor() {
+
+        // 배열을 사용해서 아래 긴 조건문을 더 간결하게 바꿀 수 있다.
+        // 1. 배열 선언 
+        let colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+
+        // 2. 현재 클래스 가져오기 
+        let currentColor = $(".box").attr("class").split(" ")[1]; 
+
+        // .split(" ")[1] 을 해주지 않으면 ? 
+        // 그냥 $(".box").attr("class").split(" "); 만 작성하면 해당 태그가 갖고 있는 클래스 명들을 
+        // 각각 split 하여 배열로 반환한다. ['box', 'red'] 로 콘솔에 출력된다. 따라서 두번째 인덱스를 가져오는 것.
+        console.log(currentColor) // red 클래스명만 출력된다 .
+
+        // 3. 현재 클래스의 인덱스 찾기. 
+        let currentIndex = colors.indexOf(currentColor); // red는 0번째 인덱스이므로 0을 반환한다.
+        console.log(currentIndex) // 0
+
+        // 4. 다음 클래스의 인덱스 계산 
+        let nextIndex = (currentIndex + 1) % colors.length; // (현재 인덱스 + 1) % 배열 길이
+        console.log(colors.length);
+        console.log(nextIndex) // 인덱스 1
+
+        // 5. 다음 클래스 가져오기.
+        let nextColor = colors[nextIndex];  // colors[1] == orange 클래스 !
+        console.log(nextColor)
+
+        // 6. 클래스 변경
+        $(".box").switchClass(currentColor, nextColor); // 현재 클래스 컬러 -> 다음 클래스 컬러로 변경 
+
+        // 처음 그냥 조건문으로 했던 방법 
+            // if($("div").hasClass("red")) {
+            //     $(".box").switchClass("red", "orange")
+            // } else if($("div").hasClass("orange")) {
+            //     $(".box").switchClass("orange", "yellow")
+            // } else if($("div").hasClass("yellow")) {
+            //     $(".box").switchClass("yellow", "green")
+            // } else if($("div").hasClass("green")) {
+            //     $(".box").switchClass("green", "blue")
+            // } else if($("div").hasClass("blue")) {
+            //     $(".box").switchClass("blue", "purple")
+            // } else if($("div").hasClass("purple")) {
+            //     $(".box").switchClass("purple", "red")
+            // }
+            
+        }
+    </script>
+</body>
+</html>

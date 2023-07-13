@@ -83,12 +83,12 @@
             document.getElementById("result").value = "";
         }
 
-       
+        let num = 1; // id 
         // 실습 2. 방명록 만들기
         function writeContents() {
             
             let table = document.querySelector("table"); // 1. 테이블 태그 불러오기 
-            let num = 1; // id 
+           
 
             // 1-1. 행 생성
             /*
@@ -134,6 +134,10 @@
 
             table.appendChild(tr)
             num++;
+            console.log(num);
+            
+            document.getElementById("user").value = ""
+            document.getElementById("contents").value = ""
             
         }
     </script>
