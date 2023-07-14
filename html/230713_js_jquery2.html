@@ -11,6 +11,7 @@
         .box {
             width: 100px;
             height: 100px;
+            cursor: pointer;
         }
         .red {
             background-color: red;
@@ -86,7 +87,18 @@
             // } else if($("div").hasClass("purple")) {
             //     $(".box").switchClass("purple", "red")
             // }
-            
+        }
+        // leader님
+        const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+        let num = 0;
+
+        function switchColor2() {
+            let num2 = num % 6;
+            $(".box").switchClass(colors[num], colors[(num2+1)%6])
+            num++;
+
+            //if(num === colors.length - 1) num = 0;
+
         }
     </script>
 </body>
