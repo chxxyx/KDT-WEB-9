@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            // window.addEventListener("load", ()=> {
+            //     let div = document.querySelector("div");
+            //     div.style.marginLeft = "100px"
+            // })
+    </script>
+</head>
+<body>
+    <button type="button">버튼</button>
+    <input type="text" id="id" name="id" placeholder="id를 입력해주세요" />
+    <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요" />
+    <input type="password" id="pw_check" name="pw_check" placeholder="비밀번호를 입력해주세요" />
+    <div style="width: 100px; height: 100px; background-color: red; transition: 1s;"></div>
+
+    <script>
+
+        let button = document.querySelector("button");
+
+        button.addEventListener("click", function() {
+            alert("클릭")
+        })
+
+        let input = document.getElementById("pw");
+        input.addEventListener("keyup", (e)=>{
+            if(e.key == "Enter") {
+                alert("로그인")
+            }
+        })
+
+        window.addEventListener("resize", ()=> { // 특정 사이즈로 변경될 때
+              if(window.innerWidth >= 400) {
+                console.log("크다")
+              }
+        })
+
+        // scroll : 요소나 window에 스크롤 기능
+
+        // change
+        input.addEventListener("change", (e)=>{
+            console.log(e.currentTarget.value) // input 태그에 담긴 value 값
+        })
+
+        // 비밀번호 확인
+        let rePW = document.getElementById("pw_check");
+        rePW.addEventListener("change", (e) => {
+            if(input.value == e.currentTarget.value) {
+                alert("같다.")
+            } else {
+                alert ("다르다.")
+            }
+        })
+    </script>
+</body>
+</html>
