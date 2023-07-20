@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <style>
+        .box {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+        .title {
+            color: rgb(88, 201, 88);
+            font-size: 30px;
+            font-weight: 700;
+            position: relative;
+            left: 17%
+        }
+
+        thead td {
+            width: 80px;
+            height: 70px;
+            font-weight: 600;
+        }
+
+        tbody td {
+            width: 80px;
+            height: 105px;
+            cursor: pointer;
+        }
+
+        .calendar {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .date {
+            height: 15px;
+            margin-bottom: 5px;
+        }
+
+        .contents {
+            height: 70px;
+            padding: 5px;
+        }
+
+        .background{
+            background-color: rgb(211, 240, 250);
+            border-radius: 10%;
+        }
+
+        tbody td:hover{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        날짜: <span class="input-date"></span>
+        <div></div>
+        내용: <input type="text" class="input-contents" placeholder="내용을 입력하세요."/>
+        <button type="button">작성</button>
+    </div>
+
+    <table class="calendar">
+        <thead>
+            <tr>
+                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                <td class="title" colspan="5">
+                    <span id="cal-year"></span>년
+                    <span id="cal-month"></span>월
+                </td>
+                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+            </tr>
+            <tr>
+                <td style="color: red;">일</td>
+                <td>월</td>
+                <td>화</td>
+                <td>수</td>
+                <td>목</td>
+                <td>금</td>
+                <td style="color: blue;">토</td>
+            </tr>
+
+        </thead>
+
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+    
+        let today = new Date();
+        console.log(today)
+        // -> Fri Jul 14 2023 01:30:52 GMT+0900 (한국 표준시)
+
+
+        // 달력 생성 메서드.
+        function buildCalendar() {
+
+            // 이번 달의 1일
+            let firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
+            console.log(`firstDate : ${firstDate}`);
+            console.log(today.getMonth());
+            // -> 오늘 날짜 기준 년도, 월의 1일 !
+
+            // 이번 달의 마지막일 (0)
+            let lastDate = new Date(today.getFullYear(), today.getMonth()+1, 0);
+            console.log(`LastDate : ${lastDate}`);
+
+            let tbody = document.querySelector("tbody");
+            document.getElementById("cal-year").innerText = today.getFullYear();
+            document.getElementById("cal-month").innerText = today.getMonth()+1;
+
+            // ex) 다음 달로 넘어갔을 경우, 이전 출력 결과가 남아있을 수 있으니 초기화 한다.
+            while (tbody.rows.length > 0) {  
+                tbody.deleteRow(tbody.rows.length - 1);
+            }
+
+            // 첫번 째 행 추가
+            let nowRow = tbody.insertRow();
+
+            // 1일 시작 전까지 빈 열 추가
+            for(let j = 0; j < firstDate.getDay(); j++) {
+                let nowColumn = nowRow.insertCell();
+            }
+
+            // day는 날짜를 저장하는 변수, 이번달 마지막날까지 증가시키며 반복 
+            // Ex) .setDate(13) : 객체를 13일로 변경 
+            // nowDay.setDate(nowDay.getDate()+1) : ex) nowDay가 1일일 경우 1일의 다음날인 2일로 
+            for(let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate()+1)) {
+                let nowColumn = nowRow.insertCell(); // 새로운 열 추가
+                nowColumn.innerHTML = nowDay.getDate();
+                nowColumn.innerHTML = "<div class='date'>"+nowDay.getDate()+"</div><div class='contents' style='color: black'><div>";
+        
+               // 일요일 : 빨간색, 토요일 : 파란색
+               if(nowDay.getDay() == 0){
+                nowColumn.style.color = "red";
+               } else if(nowDay.getDay() == 6) {
+                nowColumn.style.color = "blue";
+                nowRow = tbody.insertRow(); // 토요일일 경우 다음으로 넘어가야 하므로 다시 열 추가
+               }
+            
+            }
+        }
+
+        buildCalendar();
+
+        let tableDate;
+        
+        $("td").click(function() {
+            console.log(`this : ${this}`); // this : [object HTMLTableCellElement]
+            
+            //console.log(`function(obj) : ${obj.currentTarget}`); // function(obj) : [object HTMLTableCellElement]
+
+        // function (obj) -> 여기서 함수의 매개변수로 'obj'가 온다. 이는 obj라는 매개변수를 이용해 obj.currentTarget을 해줄 경우
+        // this와 같이 HTMLCellElement, 즉 html 요소를 가져와 함수 안에서 사용할 수 있다.
+    
+            console.log($(this).children('.date').text());
+            $(".input-date").text($(this).children('.date').text());
+            tableDate = this;
+            $(tableDate).children(".date").addClass("selected");
+        })
+
+        $("button").click(function() {
+            let content = $(".input-contents").val();
+            console.log(content);
+            $(tableDate).children('.contents').text(content);
+            $(tableDate).children('.contents').addClass('background');
+            $(".input-contents").val("");
+        })
+    </script>
+</body>
+</html>

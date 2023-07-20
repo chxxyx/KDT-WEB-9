@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script>
+
+        // $("선택자").함수()-> 여기 있는 함수는 제이쿼리 내에서 제공되고 있는 함수를 말한다.
+
+    </script>
+    <style>
+
+        .fruits-box {
+            width: 500px;
+            height: 500px;
+        }
+        .img-box, img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <input type="text" name="id" id="id" /> -->
+    <!-- <input type="text" name="pw" id="pw" /> -->
+    <!-- <button type="button" onclick="changeJq()">바껴라</button>
+    <button type="button" onclick="btn2()">사라져라</button>
+    <hr />  
+    <div></div>
+    <div></div>
+    <hr />
+    <br />
+    <div class="container">
+        <div class="red box"></div>
+        <div class="orange box"></div>
+        <div class="red box"></div>
+    </div>
+
+    <button onclick="fn3()">요소 탐색</button> -->
+
+    <div class="fruits-box">
+       <div class="img-box">
+       </div>
+       <button type="button" class="apple" onclick="changeFruits()">사과</button>
+       <button type="button" class="banana" onclick="changeFruits()">바나나</button>
+       <button type="button" class="grape" onclick="changeFruits()">포도</button>
+       <button type="button" class="peach" onclick="changeFruits()">복숭아</button>
+    </div>
+
+    <script>
+
+        // function showApple() {
+        //     $('img').attr("src", "https://www.korea.kr/newsWeb/resources/temp/images/000052/%EC%82%AC%EA%B3%BC_%EB%B3%B8%EB%AC%B8.jpg");
+        // }
+
+        // function showBanana() {
+        //     $('img').attr("src", "http://www.orangec.co.kr/shopimages/orangec/mobile/2/1224592_represent?1641862953");
+        
+        // }
+
+        // function showGrape() {
+        //     $('img').attr("src", "https://www.yyg.go.kr/contents/71/img_grape01_2.jpg?build_20230713013");
+       
+        // }
+
+        // function showPeach() {
+        //     $('img').attr("src", "https://health.chosun.com/site/data/img_dir/2023/06/01/2023060101900_0.jpg");
+        
+        // }
+
+        function fn3() {
+            //console.log($(".container").children().removeClass("red"))
+
+            // console.log($(".orange").parent()) // 부모만 선택
+            // console.log($(".orange").parents(".container")) // 모든 상위 요소 다 선택
+            // console.log($(".orange").next()) // 다음
+            // console.log($(".orange").prev()) // 이전
+
+            console.log($(".red").nextAll()) 
+            console.log($(".red").prevAll(".orange")) 
+        
+        }
+
+        function changeJq() {
+            let valueJq = $("#id").val() // .val() 는 value를 의미한다.
+            //let valueJs = document.getElementById("id").value; -> 바닐라 js
+
+            console.log(valueJq);
+            //console.log(valueJs); -> jquery가 훨씬 간단하게 표현 가능
+
+            //$("#id").val("aaa"); // == document.getElmentById("id").value = "aaa"
+            // $("input").val("aaaa")
+        
+            // jquery 스타일 변경
+
+            // $("div").css("background-color", "lightpink")
+            // $("div").css("border-radius", "20px")
+
+            // // 속성에 접근할 수 있는 attr 함수
+            // $("input").attr("placeholder", "아이디를 입력하세요")
+            
+            // text 함수
+            //$("div").text("하이")
+
+            // html 함수, .innerHTML
+            //$("div").html("<p>hi</p>")
+
+            // 요소 추가하기 -> append 함수 -> 태그 파싱함 !!
+            $("div").append(`<h6>H1 추가</h6>`)
+
+            // 요소 추가하기 - 2. 자식 요소 중 첫 번째로 추가 
+            $("div").prepend(`<h6>prepend</h6>`)
+
+            // 선택된 요소의 형제 요소 이전 형제로 추가
+            $("div").before(`<h6>before</h6>`)
+
+            // 선택된 요소의 형제 요소 다음 형제로 추가
+            $("div").after(`<h6>after</h6>`)
+
+            // empty
+            //$("div").empty()
+
+            // addClass 함수
+            $("div").addClass("red")
+         
+        }
+
+        function btn2() {
+            // removeClass 
+            //$("div").removeClass()
+             //$("div").removeClass("red")
+
+            // hasClass 함수
+            console.log($("div").hasClass("red")) // div 요소에 red라는 클래스가 있는지, 없는지 확인
+        
+            // toggleClass() , 없으면 넣어주고 있으면 사라지는 
+            $("div").toggleClass("red")
+         }
+    </script>
+</body>
+</html>

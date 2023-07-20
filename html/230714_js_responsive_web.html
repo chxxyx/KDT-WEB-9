@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media</title>
+
+   <!-- <style>
+
+        body {
+            background-color: indianred;
+        }
+        .box {
+            font-size: 100px;
+        }
+
+        /* 반응형 웹을 위한 사용 
+            @media를 적은 후 유형을 적는다. 
+            and
+            (크기 조건) {
+                안에 css 내용을 적는다. 
+            }
+
+            유형 : screen, print(인쇄 설정), all(screen, print 포함)
+            크기 조건 : max, min-width / max, min-height
+            screen : 기기
+            max-width : 700px 이하일 경우에 아래 서식을 적용하겠다는 것을 의미한다.
+            min-width : ~ 지정 픽셀의 이상일 경우에 아래 서식을 적용하겠다는 것 의미
+        */
+        @media screen and (max-width: 700px) {
+            body {
+                background-color: lightgoldenrodyellow;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            body {
+                background-color: yellow;
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            body {
+                background-color: black;
+            }
+        }
+
+        /* css :: 나중에 오는 요소가 적용된다는 거 까먹지 말기. */
+        /* 인쇄할 때 삭제하고 싶은 영역이 있거나 저작권 영역 추가 하고 싶을 때도 가능하다. */
+        /* @media print {
+            .box {
+                display: none;
+            }
+        } */
+    </style> -->
+
+ <!--  <style>
+        body {
+            background-color: black;
+        }
+
+        @media screen and (min-width: 300px){
+            body {
+                background-color: yellow;
+            }
+        }
+        @media screen and (min-width: 500px){
+            body {
+                background-color: green;
+            }
+        }
+    </style> -->
+
+ <!--   <style>
+        /* 가로 모드 */
+        @media screen and (orientation: landscape) {
+            body {
+                background-color: bisque;
+            }
+        }
+
+        /* 세로 모드 */
+        @media screen and (orientation: portrait) {
+            body {
+                background-color: tomato;
+            }
+        }
+    </style> -->
+
+    <!-- <style> 실습 1
+        
+        @media screen and (max-height: 300px) {
+            p {
+               font-family: serif;
+            }
+        }
+        @media screen and (min-height: 500px) {
+           p {
+            background-color: green;
+           }
+        }
+         @media screen and (max-width: 300px){
+            body {
+                background-color: orange;
+            }
+        }
+
+        @media screen and (min-width: 500px){
+            body {
+                background-color: lightblue;
+            }
+        }
+
+    </style>  -->
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border-radius: 10px;
+            border-color: red;
+            margin: 10px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .container .box {
+                display: block;
+                background-color: aquamarine;
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+                
+            .container {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">hi</div> -->
+    <!-- <p>미디어 쿼리 실습</p> -->
+
+    <div class="container">
+        <div class="first box"></div>
+        <div class="second box"></div>
+        <div class="third box"></div>
+    </div>
+</body>
+</html>

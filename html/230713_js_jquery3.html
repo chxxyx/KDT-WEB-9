@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <style>
+        .fruits-box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .apple{
+            background-image: url('https://www.korea.kr/newsWeb/resources/temp/images/000052/%EC%82%AC%EA%B3%BC_%EB%B3%B8%EB%AC%B8.jpg');
+        }
+
+        .banana {
+            background-image: url('http://www.orangec.co.kr/shopimages/orangec/mobile/2/1224592_represent?1641862953');
+        }
+
+        .grape {
+            background-image: url('https://www.yyg.go.kr/contents/71/img_grape01_2.jpg?build_20230713013');
+        }
+
+        .peach {
+            background-image: url('https://health.chosun.com/site/data/img_dir/2023/06/01/2023060101900_0.jpg');
+
+        }
+    </style>
+</head>
+<body>
+    <div class="fruits-box">
+        <button type="button" class="apple" onclick="changeFruits('apple')">사과</button>
+        <button type="button" class="banana" onclick="changeFruits('banana')">바나나</button>
+        <button type="button" class="grape" onclick="changeFruits('grape')">포도</button>
+        <button type="button" class="peach" onclick="changeFruits('peach')">복숭아</button>
+     </div>
+
+     <script>
+            function changeFruits(fruits) {
+
+                $("div").removeClass().addClass(fruits)
+
+            }
+     </script>
+</body>
+</html>

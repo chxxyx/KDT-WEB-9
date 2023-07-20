@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <style>
+        .box {
+            position: relative;
+            left: 30%;
+        }
+
+        .title {
+            color: rgb(88, 201, 88);
+            position: relative;
+            left: 17%
+            
+        }
+        td {
+           cursor: pointer; 
+           text-align: center;
+           height: 40px;
+           overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+    날짜: <input type="text" class="date" /><br />
+    내용: <input type="text" class="contents" /><br />
+    <button type="button">작성</button>
+    
+    <div class="box">
+        <h2 class="title">2023년 7월</h2>
+
+        <table id="calendar_table" cellspacing="0" cellpadding="20">
+                <tr id="mainBar">
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+        </table>
+    </div>
+
+    <script>
+        // let today = new Date();
+        // let todayYear = today.getFullYear();
+        // let todayMonth = today.getMonth() + 1;
+        // let today_yearMonth = todayYear + " - " + todayMonth;
+
+        // let firstDate = new Date(today.getFullYear(), today.getMonth(),1);
+		// let lastDate = new Date(today.getFullYear(), today.getMonth()+1,0);
+		// let day = firstDate.getDay();
+		// let calendar = document.getElementById("calendar_table");
+		// let week = Math.ceil(lastDate.getDate()/7) + 1;
+
+        // function buildCalendar(){
+		// 	let leftDays = 7; // setDays 와 반비례 
+		// 	let setDays = 1;// leftDays 와 반비례 
+		// 	for(i = 1; i < week; i++){
+		// 		let row = calendar.insertRow();
+		// 		while(day != 0){
+		// 			row.insertCell().innerHTML = "";
+		// 			day -= 1;
+		// 			leftDays -= 1;
+		// 		} // 1주
+		// 		let nextMonthDate = 1;
+		// 		while(leftDays != 0){
+		// 			if(setDays > lastDate.getDate()){
+		// 				row.insertCell().innerHTML = nextMonthDate; 
+		// 				leftDays -= 1;
+		// 				nextMonthDate += 1;
+		// 			}else{
+		// 				row.insertCell().innerHTML = setDays;
+		// 				setDays +=1;
+		// 				leftDays -= 1;
+		// 			}
+		// 		}
+		// 		leftDays = 7;
+		// 	}
+		// }
+		// buildCalendar();
+
+        // 달력 만들기
+
+
+        
+        let td; // 전역 변수로 담아주자 
+
+        $("td").click(function() {
+            console.log(this); 
+            console.log($(this).text())
+            if($(this).text())
+            $(".date").val($(this).html().split('<')[0])
+            td = this;
+           
+        })
+        
+        $("button").click(function(obj) {
+            console.log(td) 
+            let date = $(".date").val();
+            let contents = $(".contents").val();
+            $(td).append(`<div>${contents}</div>`)
+            $(".contents").val("");
+    
+        })
+     
+
+    </script>
+</body>
+</html>
