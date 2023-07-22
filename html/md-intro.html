@@ -22,155 +22,339 @@
             background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAABhJREFUKFNjZMAD3l257ss4PBSAvILPJwAPGRc57aMbnwAAAABJRU5ErkJggg==) repeat;
         
         }
+        .img-box img {
+            width: 200px;
+            height: 200px;
+        }
 
         .box {
             display: flex;
-        }
-
-        img {
-            width: 200px;
-            height: 200px;
         }
 
         .animate__animated.animate__bounce {
         --animate-duration: 1s;
         }
 
-    #pleasure{
-        position: absolute;
-        left: 30%;
-        top: 25%;
-        /* transform: translate(-30%, -50%); */
-        z-index: 3;
-    }
+        .intro-modal-box {
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    #angry {
-        position: absolute;
-        right: 32%;
-        top: 25%;
-        z-index: 2;
-    }
+        .intro-modal {
+            display: inline;
+            margin-top: 0;
+            width: 90vw;
+            height: auto;
+            z-index: 1;
+        }
 
-    #happy {
-        position: absolute;
-        left: 20%;
-        top: 47%;
-        z-index: 6;
-    }
+        .img-box {
+            display: flex;
+            animation: imgEnd 13s linear 1;
+        }
 
-    #sad {
-        position: absolute;
-        right: 22%;
-        top: 47%;
-        z-index: 4;
-    }
-    #proud {
-        position: absolute;
-        right: 41%;
-        top: 50%;
-        z-index: 5;
-    }
+        #pleasure{
+            position: absolute;
+            left: 33%;
+            top: 29%;
+            z-index: 3;
+        }
 
-    .intro-modal-box {
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        #angry {
+            position: absolute;
+            right: 38%;
+            top: 29%;
+            z-index: 2;
+        }
 
-    }
+        #happy {
+            position: absolute;
+            left: 27%;
+            top: 46%;
+            z-index: 6;
+        }
 
-    .intro-modal {
-        display: inline;
-        margin-top: 0;
-        width: 1000px;
-        height: auto;
-        z-index: 1;
-    }
+        #sad {
+            position: absolute;
+            right: 31%;
+            top: 47%;
+            z-index: 4;
+        }
+        #proud {
+            position: absolute;
+            left: 40%;
+            top: 56%;
+            z-index: 5;
+        }
+       
+        .start {
+            position: absolute;
+            background-color: #8E9AAF;
 
-    .img-box {
-        display: flex;
-        animation: imgEnd 13s linear 1;
-    }
-    @keyframes imgEnd {
-        0% {
+            width: 45vw;
+            height: 15vh;
+            margin: 0;
+            border-radius: 10px;
+            left: 25%;
+            top: 43%;
+            z-index: 7;
+            animation: start 12s linear 1;
+        }
+
+        .start img {
+            position: absolute;
+            width: 80vh;
+            height: auto;
+            left: 3%;
+            top: -15%;
+        }
+
+        .loading-box {
+            position: absolute;
+            left: 30%;
+            top: 35%;
+            z-index: 9;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 216px;
         
-            opacity: 1;
-        }
-        25% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 1;
+            animation: loading 13s linear 1;
         }
 
-        75% {
-            opacity: 0;
+        .loading-title {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 35px;
+            font-weight: 600;
+            line-height: 1.3333;
+            color: rgb(79, 79, 79);
+            animation-name: flicker;
+            animation-duration: 1500ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
         }
 
-        100% {
-        
-            opacity: 0;
-        }
-    }
-
-    .start {
-        position: absolute;
-        background-color: #8E9AAF;
-
-        width: 500px;
-        height: 150px;
-        margin: 0;
-        border-radius: 10px;
-        left: 25%;
-        top: 40%;
-        z-index: 7;
-        animation: start 12s linear 1;
-    }
-    @keyframes start {
-        0% {
-        
-            opacity: 0;
-        }
-        50% {
-            opacity: 0;
-        }
-        80%{
-            opacity: 0;
+        .progress-bar {
+            position: relative;
+            width: 250px;
+            height: 12px;
+            border-radius: 100px;
+            background-color: rgb(201, 201, 201);
+            overflow: hidden;
         }
 
-        100% {
-            opacity: 1;
+        .progress-bar-gauge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 12px;
+            border-radius: 100px;
+            background-color: #FFE8A3;
+            animation-name: loading-bar;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
         }
-    }
 
-    .start img {
-        position: absolute;
-        width: 500px;
-        height: auto;
-        left: 0;
-        top: 10%;
-    }
+        @keyframes imgEnd {
+            0% {
+            
+                opacity: 1;
+            }
+            25% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
 
-    @media screen and (max-width: 768px){
-        body {
-           padding: 0;
+            75% {
+                opacity: 0;
+            }
+
+            100% {
+            
+                opacity: 0;
+            }
         }
-    }
 
-    @media screen and (max-width: 768px){
-        .box {
-           width: 20px;
-           height: auto;
+        @keyframes start {
+            0% {
+            
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            80%{
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
-    }
 
+        @keyframes loading {
+            0% {
+            
+                opacity: 1;
+            }
+            25% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 0;
+            }
+
+            100% {
+            
+                opacity: 0;
+            }
+        }
+
+        @keyframes flicker {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes loading-bar {
+            0% {
+                width: 0;
+                opacity: 1;
+            } 80% {
+                width: 100%;
+                opacity: 1;
+            } 100% {
+                width: 100%;
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            #pleasure{
+            left: 40%;
+            top: 35%;
+            z-index: 3;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            #angry{
+                right: 39%;
+                top: 35%;
+                z-index: 2;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            #sad{
+            right: 35%;
+            top: 47%;
+            z-index: 4;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            #proud{
+                left: 44%;
+                top: 55%;
+                z-index: 5;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            #happy{
+                left: 34%;
+                top: 47%;
+                z-index: 6;
+            }
+        }
+
+        /* 이모지 줄이기 */
+        @media screen and (max-width: 768px){
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .start {
+            width: 45vw;
+            height: 8vh;
+            top: 42%;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .start img {
+                width: 45vw;
+                height: auto;
+                left: 3%;
+                top: 0;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .loading-title {
+            font-size: 15px;
+            margin-bottom: 5px;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .progress-bar {
+                width: 120px;
+                height: 10px;
+                top: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .loading-box {
+            position: absolute;
+            left: 0;
+            top: 35%;
+            z-index: 9;
+            }
+
+        }
 
     </style>
 
 </head>
 <body>
+
+
+
     <div class="box" class="animate__animated animate__bounceInUp">
+            <!-- 로딩 -->
+        <div class="loading-box">
+            <div class="loading">
+                <h1 class="loading-title">Loading. . .</h1>
+                <div class="progress-bar" aria-hidden="true">
+                    <span class="progress-bar-gauge"></span>
+                </div>
+            </div>
+        </div>  
         <div class="intro-modal-box">
             <img class="intro-modal" src="../img/intro-modal.png" />
             <div class="img-box">
