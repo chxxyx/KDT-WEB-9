@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        #object{
+            background-color: #fe5652;
+            visibility: hidden;
+            width: 500px;
+            height: 500px;
+        }
+
+        #animatedElement {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+
+    <div id="object" class="slideUp">
+       
+    </div>
+ <div id="animatedElement">click</div>
+    <script>
+
+        $(window).scroll(function() {
+            $('#animatedElement').each(function(){
+            var imagePos = $(this).offset().top;
+    
+            var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow+400) {
+                    $(this).addClass("slideUp");
+                }
+            });
+        });
+        $('#animatedElement').click(function() {
+            alert("click 이벤트 확인");
+		    $(this).addClass("slideUp");
+	    });
+    </script>
+</body>
+</html>

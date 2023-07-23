@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/animations.css"> -->
+ 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+        * {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAABhJREFUKFNjZMAD3l257ss4PBSAvILPJwAPGRc57aMbnwAAAABJRU5ErkJggg==) repeat;
+        
+        }
+
+        .box {
+            display: flex;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .animate__animated.animate__bounce {
+        --animate-duration: 1s;
+        }
+
+    #pleasure{
+        position: absolute;
+        left: 30%;
+        top: 25%;
+        /* transform: translate(-30%, -50%); */
+        z-index: 3;
+    }
+
+    #angry {
+        position: absolute;
+        right: 32%;
+        top: 25%;
+        z-index: 2;
+    }
+
+    #happy {
+        position: absolute;
+        left: 20%;
+        top: 47%;
+        z-index: 6;
+    }
+
+    #sad {
+        position: absolute;
+        right: 22%;
+        top: 47%;
+        z-index: 4;
+    }
+    #proud {
+        position: absolute;
+        right: 41%;
+        top: 50%;
+        z-index: 5;
+    }
+
+    .intro-modal-box {
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .intro-modal {
+        display: inline;
+        margin-top: 0;
+        width: 1000px;
+        height: auto;
+        z-index: 1;
+    }
+
+    .img-box {
+        display: flex;
+        animation: imgEnd 13s linear 1;
+    }
+    @keyframes imgEnd {
+        0% {
+        
+            opacity: 1;
+        }
+        25% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+        
+            opacity: 0;
+        }
+    }
+
+    .start {
+        position: absolute;
+        background-color: #8E9AAF;
+
+        width: 500px;
+        height: 150px;
+        margin: 0;
+        border-radius: 10px;
+        left: 25%;
+        top: 40%;
+        z-index: 7;
+        animation: start 12s linear 1;
+    }
+    @keyframes start {
+        0% {
+        
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+        80%{
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .start img {
+        position: absolute;
+        width: 500px;
+        height: auto;
+        left: 0;
+        top: 10%;
+    }
+
+    @media screen and (max-width: 768px){
+        body {
+           padding: 0;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .box {
+           width: 20px;
+           height: auto;
+        }
+    }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="box" class="animate__animated animate__bounceInUp">
+        <div class="intro-modal-box">
+            <img class="intro-modal" src="../img/intro-modal.png" />
+            <div class="img-box">
+                <div>
+                    <img id="pleasure" class="animate__animated animate__bounce animate__delay-1s" src="../img/기쁨.png" />
+                </div>
+                <div>
+                    <img id="sad" class="animate__animated animate__bounce animate__delay-3s" src="../img/슬픔.png" />
+                </div>
+                <div>
+                    <img id="proud" class="animate__animated animate__bounce animate__delay-4s" src="../img/뿌듯.png" />
+                </div>
+                <div>
+                    <img id="happy" class="animate__animated animate__bounce animate__delay-5s" src="../img/행복.png" />
+                </div>
+                <div>
+                    <img id="angry" class="animate__animated animate__bounce animate__delay-2s" src="../img/화남.png" />
+                </div>
+            </div>
+            <div class="start">
+                <a class="main-start" href="#" >
+                    <img src="../img/intro-start-btn.png" />
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
